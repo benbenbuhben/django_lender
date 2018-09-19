@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django Demo</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url "home" %}">Home</a></li>
+        <li><a href="{% url "book_list" %}">Books</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content%}
+    <h3>No Content</h3>
+    {% endblock %}
+  </main>
+</body>
+</html>
