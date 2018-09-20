@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Book(models.Model):
@@ -7,6 +8,7 @@ class Book(models.Model):
         ('complete', 'Complete'),
     ]
 
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='books')
     title = models.CharField(max_length=48)
     author = models.CharField(max_length=4096)
     year = models.CharField(max_length=48)
